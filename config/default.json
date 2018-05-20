@@ -1,0 +1,63 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "5520d89d8182225620dbbe4c79f7a4f411737b2102799a77c124624150774f33692b63477407d1853b70d3158e007e11d2bbb1e3f69913cee1a54ae6b99f77cc306a93d60b9c022493cec3e68adbbd13ddf4549c5897360edd1bb331e629af32af7c02be6abd99439362d7feb73321f74147db52c51c26be5207444d8ca82ba8f6ae757e15230b2660069ab2ffd911e11f016c5f71c4d3c75d4a9b3626f886ad76d3b0404d10e31e1f448d077580be83b98c65fff6fb6cecdd0773a3f5d0e368ca67151f48396f114006ceb40adff2d12a236b70077c8ad671e6dee14e69dda3b5f76902ae05e165427eb4c57ca33e6dd8d6a0ede705a499cb83b56cb1797bc8",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://jogchat.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "authentication-management": {
+
+  },
+  "database": {
+    "host": "localhost",
+    "dialect": "postgres",
+    "username": "",
+    "password": "",
+    "database": "jogchat",
+    "define": {
+      "underscored": false
+    },
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "smtp-config": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true,
+    "auth": {
+      "user": "bxbian951122@gmail.com",
+      "pass": "cydnnipzenltvilu"
+    }
+  },
+  "complaint_email": "",
+  "postgres": "postgres://postgres:@localhost:5432/jogchat_backend"
+}
